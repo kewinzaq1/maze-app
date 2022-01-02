@@ -17,6 +17,9 @@ const MenuPopStyles = styled.div`
   position: relative;
   margin-top: -3rem;
   min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .resources__list {
     img {
@@ -130,6 +133,10 @@ const MenuPopStyles = styled.div`
 
   &.none {
     transform: translateY(-100vh);
+  }
+
+  @media (max-width: 1024px) {
+    display: none !important;
   }
 `;
 

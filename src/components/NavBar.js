@@ -114,7 +114,13 @@ function NavBar() {
           <>
             <div className='nav__list'>
               <ul>
-                <li>Why Maze?</li>
+                <li
+                  role='button'
+                  onMouseEnter={() => {
+                    setPopMenu(false);
+                  }}>
+                  Why Maze?
+                </li>
                 <li
                   role='button'
                   onMouseEnter={() => {
@@ -124,8 +130,20 @@ function NavBar() {
                   }}>
                   Product <AiOutlineDown />
                 </li>
-                <li>Enterprise</li>
-                <li>Pricing</li>
+                <li
+                  role='button'
+                  onMouseEnter={() => {
+                    setPopMenu(false);
+                  }}>
+                  Enterprise
+                </li>
+                <li
+                  role='button'
+                  onMouseEnter={() => {
+                    setPopMenu(false);
+                  }}>
+                  Pricing
+                </li>
                 <li
                   role='button'
                   onMouseEnter={() => {
@@ -135,7 +153,13 @@ function NavBar() {
                   }}>
                   Resources <AiOutlineDown />
                 </li>
-                <li>Comunity</li>
+                <li
+                  role='button'
+                  onMouseEnter={() => {
+                    setPopMenu(false);
+                  }}>
+                  Comunity
+                </li>
               </ul>
             </div>
             <div className='nav__action'>

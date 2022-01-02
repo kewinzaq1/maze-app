@@ -10,6 +10,8 @@ const ButtonStyles = styled.a`
   position: relative;
   z-index: 2;
   white-space: nowrap;
+  transition: 500ms cubic-bezier(0.4, 0.6, 0.32, 1.275);
+
   &::after {
     content: "";
     position: absolute;
@@ -20,6 +22,7 @@ const ButtonStyles = styled.a`
     border-radius: 2rem;
     z-index: -1;
     background-color: transparent;
+    transition: 500ms ease-in-out;
   }
 
   ${(props) =>
@@ -27,11 +30,19 @@ const ButtonStyles = styled.a`
     `
       background: var(--blue_1);
       color: var(--white_1);   
+      &:hover{
+        opacity: .8;
+      }
   `}
   ${(props) =>
     props.outline &&
     `
      border: 2px solid var(--black_1);
+     &:hover{
+       background: var(--black_1);
+       color: #fff;
+
+     }
      
   `}
 `;

@@ -9,7 +9,7 @@ import MenuMobile from "./MenuMobile";
 const NavbarStyles = styled.div`
   position: fixed;
   top: 0;
-  transition: 1s;
+  transition: background 1s;
   width: 100vw;
   height: 80px;
   z-index: 999;
@@ -55,7 +55,7 @@ const NavbarStyles = styled.div`
   }
   &:hover,
   &.active {
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: var(--white_1);
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
       rgba(50, 50, 93, 0.075) 0px 50px 100px -20px,

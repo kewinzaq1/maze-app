@@ -95,6 +95,7 @@ const TestimonialsStyles = styled.section`
     height: 2px;
     background-color: var(--grey_1);
     opacity: 0.4;
+    margin-top: 5rem;
   }
 `;
 

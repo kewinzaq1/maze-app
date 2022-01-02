@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
         --lightBlue_1: #F1F5FA;
         --white_1: #ffffff;
         --black_1: #0a0a0a;
+        --grey_1: #c5c3c3;
     }
 
     video {

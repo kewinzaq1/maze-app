@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LogoBig from "../assets/logo/logo__big.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineDown } from "react-icons/ai";
+import { AiOutlineDown, AiOutlineClose } from "react-icons/ai";
 import styled from "styled-components";
 import Button from "./Button";
+import MenuMobile from "./MenuMobile";
 
 const NavbarStyles = styled.div`
   position: fixed;
@@ -22,6 +23,10 @@ const NavbarStyles = styled.div`
     padding: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+
+    .nav__logo {
+      padding-top: 0.3rem;
+    }
   }
 
   .nav__button--hamburger {
@@ -63,6 +68,7 @@ function NavBar() {
   );
 
   const [navbarActive, setNavbarActive] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const changeNavbar = () => {
     console.log(window.scrollY);
@@ -82,14 +88,17 @@ function NavBar() {
   }, []);
 
   return (
-    <NavbarStyles className={navbarActive ? "active" : ""}>
+    <NavbarStyles className={navbarActive || mobileMenu ? "active" : ""}>
       <div className='nav__wrapper'>
         <div className='nav__logo'>
           <img src={LogoBig} alt='maze' />
         </div>
         {isMobile && (
-          <div className='nav__button--hamburger'>
-            <GiHamburgerMenu />
+          <div
+            className='nav__button--hamburger'
+            role='button'
+            onClick={() => setMobileMenu(!mobileMenu)}>
+            {!mobileMenu ? <GiHamburgerMenu /> : <AiOutlineClose />}
           </div>
         )}
         {!isMobile && (
@@ -115,6 +124,7 @@ function NavBar() {
           </>
         )}
       </div>
+      <MenuMobile mobileMenu={mobileMenu} isMobile={isMobile} />
     </NavbarStyles>
   );
 }

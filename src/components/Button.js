@@ -9,7 +9,7 @@ const ButtonStyles = styled.a`
   font-weight: 500;
   position: relative;
   z-index: 2;
-
+  white-space: nowrap;
   &::after {
     content: "";
     position: absolute;

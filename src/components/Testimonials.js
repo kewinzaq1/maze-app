@@ -11,7 +11,9 @@ import styled from "styled-components";
 
 const TestimonialsStyles = styled.section`
   padding: 10rem 0;
-  border-bottom: 1px solid #ccc8c8;
+  img {
+    /* image-rendering: pixelated; */
+  }
   .testimonials__wrapper {
     padding: 2rem;
     text-align: center;
@@ -51,13 +53,15 @@ const TestimonialsStyles = styled.section`
       }
     }
     &--brands {
+      margin-top: 5rem;
+
       img {
         width: 100px;
         height: 100px;
       }
       display: grid;
-      gap: 2rem;
-      align-items: center;
+      gap: 5rem;
+      align-content: center;
       justify-items: center;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
@@ -74,12 +78,23 @@ const TestimonialsStyles = styled.section`
   }
   @media (min-width: 1024px) {
     .testimonials__wrapper {
+      &--header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2rem;
+      }
       &--brands {
         grid-template-columns: repeat(6, 1fr);
 
         grid-template-rows: 1fr;
       }
     }
+  }
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--grey_1);
+    opacity: 0.4;
   }
 `;
 
@@ -104,6 +119,7 @@ function Testimonials() {
           <img src={GreenLogo} alt='green' />
         </div>
       </div>
+      <div className='line'></div>
     </TestimonialsStyles>
   );
 }

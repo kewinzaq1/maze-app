@@ -83,6 +83,14 @@ const HeroStyles = styled.section`
       }
     }
   }
+  @media (min-width: 768px) and (max-width: 1200px) {
+    .hero__background {
+      video {
+        width: 150%;
+        margin-left: -50%;
+      }
+    }
+  }
 `;
 
 function HeroSection() {

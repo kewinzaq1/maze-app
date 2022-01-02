@@ -98,6 +98,12 @@ function MenuMobile({ mobileMenu, isMobile }) {
   const [showProduct, setShowProduct] = useState(false);
   const [showResources, setShowResources] = useState(false);
 
+  if ((mobileMenu === true) & (isMobile === true)) {
+    document.querySelector("body").style.overflowY = "hidden";
+  } else {
+    document.querySelector("body").style.overflowY = "visible";
+  }
+
   return (
     <>
       {mobileMenu & (isMobile === true) ? (

@@ -7,7 +7,7 @@ import Button from "./Button";
 import MenuMobile from "./MenuMobile";
 import MenuPopUp from "./MenuPopUp";
 
-const NavbarStyles = styled.div`
+const NavbarStyles = styled.nav`
   position: fixed;
   top: 0;
   transition: background 1s;

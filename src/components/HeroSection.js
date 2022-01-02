@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { videoTagString, VideoTag } from "react-video-tag";
+// import { videoTagString, VideoTag } from "react-video-tag";
 import Button from "./Button";
 import Paragraph from "./Paragraph";
 import Title from "./Title";
@@ -82,6 +82,9 @@ const HeroStyles = styled.section`
         margin-left: -100%;
       }
     }
+    .hero__buttons {
+      flex-wrap: wrap;
+    }
   }
   @media (min-width: 768px) and (max-width: 1200px) {
     .hero__background {
@@ -111,7 +114,11 @@ function HeroSection() {
         </div>
       </div>
       <div className='hero__background'>
-        <VideoTag src={HeroAnimation} poster='' autoPlay loop />
+        {/* <VideoTag src={HeroAnimation} poster='' />
+         */}
+        <video autoPlay loop muted>
+          <source src={HeroAnimation} autoPlay loop muted />
+        </video>
       </div>
     </HeroStyles>
   );

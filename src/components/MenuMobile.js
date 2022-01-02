@@ -17,7 +17,6 @@ const MenuMobileStyles = styled.div`
   z-index: -1;
   padding-top: 2rem;
   background: var(--white_1);
-  overflow-y: visible;
   position: relative;
   .menuMobile__wrappper {
     padding: 2rem;
@@ -25,10 +24,9 @@ const MenuMobileStyles = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 7rem;
-    min-height: 100vh;
-    height: fit-content;
-
+    overflow-y: scroll;
+    padding-bottom: 8rem;
+    height: 100vh;
     ul {
       display: flex;
       flex-direction: column;
@@ -61,6 +59,9 @@ const MenuMobileStyles = styled.div`
 
     .menuMobile__addList--resources,
     .menuMobile__addList--product {
+      overflow-y: scroll;
+      width: 100vw;
+      max-height: 250px;
       display: flex;
       flex-direction: column;
 

@@ -41,9 +41,20 @@ const ButtonStyles = styled.a`
      &:hover{
        background: var(--black_1);
        color: #fff;
-
      }
-     
+  `}
+  ${(props) =>
+    props.outlineWhite &&
+    `
+     border: 2px solid rgba(255,255,255,0.4);
+     &:hover{
+       background: var(--white_1);
+       color: var(--black_1);
+
+       svg{
+        color: var(--black_1) !important;
+       }
+     }
   `}
 `;
 

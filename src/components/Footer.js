@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 
 const FooterStyles = styled.footer`
+  padding-top: 5rem;
   .line {
     width: 100%;
     background: var(--grey_1);
@@ -93,8 +94,8 @@ const FooterStyles = styled.footer`
 function Footer() {
   return (
     <FooterStyles>
-      <div className='line'></div>
       <div className='footer__wrapper'>
+        <div className='line'></div>
         <div className='footer__wrapper--main'>
           <ul>
             <li>Products</li>

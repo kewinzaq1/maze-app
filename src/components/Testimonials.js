@@ -119,8 +119,8 @@ function Testimonials() {
           <img src={GreenLogo} alt='green' />
           <img src={GreenLogo} alt='green' />
         </div>
+        <div className='line'></div>
       </div>
-      <div className='line'></div>
     </TestimonialsStyles>
   );
 }

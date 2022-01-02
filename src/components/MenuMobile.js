@@ -60,6 +60,7 @@ const MenuMobileStyles = styled.div`
     .menuMobile__addList--resources,
     .menuMobile__addList--product {
       width: 100vw;
+      /* max-height: 250px; */
       display: flex;
       flex-direction: column;
 

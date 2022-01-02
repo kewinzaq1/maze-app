@@ -5,6 +5,7 @@ import { AiOutlineDown, AiOutlineClose } from "react-icons/ai";
 import styled from "styled-components";
 import Button from "./Button";
 import MenuMobile from "./MenuMobile";
+import MenuPopUp from "./MenuPopUp";
 
 const NavbarStyles = styled.div`
   position: fixed;
@@ -45,6 +46,7 @@ const NavbarStyles = styled.div`
         display: flex;
         align-items: center;
         gap: 0.25rem;
+        cursor: pointer;
         svg {
           font-size: 1rem;
           width: 16px;
@@ -70,6 +72,9 @@ function NavBar() {
 
   const [navbarActive, setNavbarActive] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [popMenu, setPopMenu] = useState(false);
+  const [popResources, setPopResources] = useState(false);
+  const [popProduct, setPopProduct] = useState(false);
 
   const changeNavbar = () => {
     console.log(window.scrollY);
@@ -89,7 +94,10 @@ function NavBar() {
   }, []);
 
   return (
-    <NavbarStyles className={navbarActive || mobileMenu ? "active" : ""}>
+    <NavbarStyles
+      className={
+        navbarActive || mobileMenu || popResources || popProduct ? "active" : ""
+      }>
       <div className='nav__wrapper'>
         <div className='nav__logo'>
           <img src={LogoBig} alt='maze' />
@@ -107,12 +115,24 @@ function NavBar() {
             <div className='nav__list'>
               <ul>
                 <li>Why Maze?</li>
-                <li>
+                <li
+                  role='button'
+                  onMouseEnter={() => {
+                    setPopProduct(true);
+                    setPopResources(false);
+                    setPopMenu(true);
+                  }}>
                   Product <AiOutlineDown />
                 </li>
                 <li>Enterprise</li>
                 <li>Pricing</li>
-                <li>
+                <li
+                  role='button'
+                  onMouseEnter={() => {
+                    setPopProduct(false);
+                    setPopMenu(true);
+                    setPopResources(true);
+                  }}>
                   Resources <AiOutlineDown />
                 </li>
                 <li>Comunity</li>
@@ -126,6 +146,15 @@ function NavBar() {
         )}
       </div>
       <MenuMobile mobileMenu={mobileMenu} isMobile={isMobile} />
+      <MenuPopUp
+        popMenu={popMenu}
+        setPopMenu={setPopMenu}
+        isMobile={isMobile}
+        popResources={popResources}
+        setPopResources={setPopResources}
+        popProduct={popProduct}
+        setPopProduct={setPopProduct}
+      />
     </NavbarStyles>
   );
 }

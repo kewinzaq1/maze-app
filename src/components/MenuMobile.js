@@ -76,13 +76,13 @@ const MenuMobileStyles = styled.div`
     }
     .menuMobile__addList--product {
       ul {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         li:first-of-type {
           text-transform: uppercase;
           font-weight: 600;
           opacity: 0.6;
           font-size: 1rem;
-          margin-bottom: -0.5rem;
+          margin-bottom: -1rem;
           cursor: auto;
         }
 

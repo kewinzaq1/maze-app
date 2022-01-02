@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
         font-family:'Poppins',sans-serif;
         overflow-x:hidden;
     }
-    *,*::after,*::before {margin: 0; padding: 0; box-sizing: border-box;transition: background 1s, color 1s}
+    *,*::after,*::before {margin: 0; padding: 0; box-sizing: border-box;}
     a{text-decoration:none; cursor: pointer; }
     ul,li{list-style-type: none}
     img,svg{height:100%;width:100%;}

@@ -5,6 +5,9 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [isLogin, setIsLogin] = useState(false);
+  const [currentPage, setCurrentPage] = useState(
+    window.location.pathname.replace("/", "")
+  );
 
   const checkingName = () => {
     setTimeout(() => {
@@ -16,6 +19,9 @@ const AppProvider = ({ children }) => {
       } else {
         setIsLogin(false);
       }
+      console.log(currentLocation);
+      setCurrentPage(currentLocation);
+      console.log(currentPage);
     }, 100);
   };
 
@@ -25,10 +31,19 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     checkingName();
+    setCurrentPage(window.location.pathname.replace("/", ""));
+    console.log(currentPage);
   }, []);
 
   return (
-    <AppContext.Provider value={{ isLogin, setIsLogin, checkingName }}>
+    <AppContext.Provider
+      value={{
+        isLogin,
+        setIsLogin,
+        checkingName,
+        currentPage,
+        setCurrentPage,
+      }}>
       {children}
     </AppContext.Provider>
   );

@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
         --black_2: #111010;
         --grey_1: #c5c3c3;
         --yellow_1:#FFE6D0;
+        --boxShadow_1: rgba(255, 255, 255, 0) 0px 1px 1px 0px inset,
+    rgba(87, 87, 117, 0) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0) 0px 30px 60px -30px;
     }
 
     video {

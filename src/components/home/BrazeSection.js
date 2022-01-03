@@ -9,7 +9,7 @@ const BrazeStyles = styled.section`
   margin: 5rem 0;
   background: var(--yellow_1);
   position: relative;
-  height: 800px;
+  height: 600px;
   .braze__image {
     display: none;
   }
@@ -56,7 +56,7 @@ const BrazeStyles = styled.section`
       left: 0;
       top: 0;
       height: 100%;
-      width: 50%;
+      width: 40%;
     }
 
     .braze__text {

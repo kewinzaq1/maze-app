@@ -7,10 +7,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import LoginBg from "../../assets/login/background.jpg";
 import { useGlobalContext } from "../../context";
-
+import one from "../../assets/goodCompany/COMPANY(1).svg";
+import two from "../../assets/goodCompany/COMPANY(2).svg";
+import three from "../../assets/goodCompany/COMPANY(3).svg";
+import four from "../../assets/goodCompany/COMPANY(4).svg";
+import five from "../../assets/goodCompany/COMPANY(5).svg";
+import six from "../../assets/goodCompany/COMPANY(6).svg";
+import seven from "../../assets/goodCompany/COMPANY(7).svg";
+import eight from "../../assets/goodCompany/COMPANY(8).svg";
 const LoginSectionStyles = styled.section`
   margin: 5rem 0;
   width: 100vw;
+
+  a {
+    font-size: 1rem;
+  }
   .login__wrapper {
     padding: 2rem;
     display: flex;
@@ -22,6 +33,10 @@ const LoginSectionStyles = styled.section`
       &--light {
         font-size: 0.9rem;
         font-weight: 400;
+      }
+
+      &--small {
+        font-size: 1rem;
       }
     }
 
@@ -122,8 +137,9 @@ const LoginSectionStyles = styled.section`
 
     .signup__info {
       position: absolute;
-      top: 80vh;
+      top: 70vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       z-index: 10;
@@ -133,6 +149,19 @@ const LoginSectionStyles = styled.section`
         max-width: 500px;
         margin: 0 auto;
         font-size: 2rem;
+      }
+
+      .signup__info--images {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 2rem;
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }
@@ -203,7 +232,7 @@ function LoginSection({ type = "login" }) {
             {type === "login" ? (
               <>
                 <Link to='/'>Forgot my password</Link>
-                <Paragraph>
+                <Paragraph className='login__paragraph--small'>
                   Don't have an account?{" "}
                   <Link to='/signup' role='button' onClick={checkingName}>
                     Sign up
@@ -213,13 +242,14 @@ function LoginSection({ type = "login" }) {
               </>
             ) : (
               <>
-                <Paragraph>
+                <Paragraph className='login__paragraph--small'>
                   Already have an account?
+                  <i> </i>
                   <Link to='/login' role='button' onClick={checkingName}>
                     Login In
                   </Link>
                 </Paragraph>
-                <Paragraph>
+                <Paragraph className='login__paragraph--small'>
                   By signing up, I agree to Maze’s
                   <Link to='/'> terms & conditions</Link>
                 </Paragraph>
@@ -229,9 +259,23 @@ function LoginSection({ type = "login" }) {
         </div>
         <div className='login__wrapper--image'>
           <img src={LoginBg} alt='login-bg' />
-          <div className='signup__info'>
-            <Title>You’ll be in good company.</Title>
-          </div>
+          {type !== "login" ? (
+            <div className='signup__info'>
+              <Title>You’ll be in good company.</Title>
+              <div className='signup__info--images'>
+                <img src={one} alt='one' />
+                <img src={two} alt='two' />
+                <img src={three} alt='three' />
+                <img src={four} alt='four' />
+                <img src={five} alt='five' />
+                <img src={six} alt='six' />
+                <img src={seven} alt='seven' />
+                <img src={eight} alt='eight' />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </LoginSectionStyles>

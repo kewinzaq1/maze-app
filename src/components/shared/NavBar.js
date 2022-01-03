@@ -16,9 +16,7 @@ const NavbarStyles = styled.nav`
   width: 100vw;
   height: 80px;
   z-index: 999;
-  box-shadow: rgba(255, 255, 255, 0) 0px 1px 1px 0px inset,
-    rgba(87, 87, 117, 0) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0) 0px 30px 60px -30px;
+  box-shadow: var(--boxShadow_1);
   .nav__wrapper {
     display: flex;
     align-items: center;
@@ -53,6 +51,9 @@ const NavbarStyles = styled.nav`
         align-items: center;
         gap: 0.25rem;
         cursor: pointer;
+        &.active {
+          border-bottom: 2px solid var(--blue_1);
+        }
         svg {
           font-size: 1rem;
           width: 16px;
@@ -76,7 +77,8 @@ function NavBar() {
     window.matchMedia("(max-width: 1024px").matches
   );
 
-  const { isLogin, checkingName } = useGlobalContext();
+  const { isLogin, checkingName, currentPage, setCurrentPage } =
+    useGlobalContext();
 
   const [navbarActive, setNavbarActive] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -108,7 +110,9 @@ function NavBar() {
       }>
       <div className={`nav__wrapper ${isLogin ? "login" : ""}`}>
         <div className='nav__logo'>
-          <img src={LogoBig} alt='maze' />
+          <Link to='/'>
+            <img src={LogoBig} alt='maze' onClick={checkingName} />
+          </Link>
         </div>
         {isMobile && !isLogin ? (
           <div
@@ -125,11 +129,13 @@ function NavBar() {
             <div className='nav__list'>
               <ul>
                 <li
+                  className={currentPage === "why-maze" ? "active" : ""}
                   role='button'
                   onMouseEnter={() => {
                     setPopMenu(false);
-                  }}>
-                  Why Maze?
+                  }}
+                  onClick={() => setCurrentPage("why-maze")}>
+                  <Link to='/why-maze'>Why Maze?</Link>
                 </li>
                 <li
                   role='button'
@@ -144,15 +150,17 @@ function NavBar() {
                   role='button'
                   onMouseEnter={() => {
                     setPopMenu(false);
-                  }}>
-                  Enterprise
+                  }}
+                  onClick={() => setCurrentPage("enterprise")}>
+                  <Link to='/enterprise'>Enterprise</Link>
                 </li>
                 <li
                   role='button'
                   onMouseEnter={() => {
                     setPopMenu(false);
-                  }}>
-                  Pricing
+                  }}
+                  onClick={() => setCurrentPage("pricing")}>
+                  <Link to='/pricing'>Pricing</Link>
                 </li>
                 <li
                   role='button'
@@ -167,16 +175,29 @@ function NavBar() {
                   role='button'
                   onMouseEnter={() => {
                     setPopMenu(false);
-                  }}>
-                  Comunity
+                  }}
+                  onClick={() => setCurrentPage("comunity")}>
+                  <Link to='/comunity'>Comunity</Link>
                 </li>
               </ul>
             </div>
             <div className='nav__action'>
-              <Link to='/login' role='button' onClick={checkingName}>
+              <Link
+                to='/login'
+                role='button'
+                onClick={() => {
+                  checkingName();
+                  setCurrentPage("login");
+                }}>
                 <Button text='login' />
               </Link>
-              <Link to='/signup' role='button' onClick={checkingName}>
+              <Link
+                to='/signup'
+                role='button'
+                onClick={() => {
+                  checkingName();
+                  setCurrentPage("login");
+                }}>
                 <Button secondary text='Get started free' />
               </Link>
             </div>

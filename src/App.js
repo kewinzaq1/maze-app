@@ -9,6 +9,8 @@ import WhyMaze from "./pages/WhyMaze";
 import Comunity from "./pages/Comunity";
 import Pricing from "./pages/Pricing";
 import Enterprise from "./pages/Enterprise";
+import Footer from "./components/shared/Footer";
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +25,7 @@ function App() {
         <Route path='/pricing' element={<Pricing />} />
         <Route path='/enterprise' element={<Enterprise />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

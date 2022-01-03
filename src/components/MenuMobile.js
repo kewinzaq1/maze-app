@@ -11,6 +11,8 @@ import testIcon from "../assets/products/test.svg";
 import integrateIcon from "../assets/products/integrate.svg";
 import reportIcon from "../assets/products/report.svg";
 import colaborateIcon from "../assets/products/colaborate.svg";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const MenuMobileStyles = styled.div`
   margin-top: -2rem;
@@ -50,9 +52,14 @@ const MenuMobileStyles = styled.div`
       display: flex;
       gap: 2rem;
       padding-top: 2rem;
-
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
       .mobileMenu__button {
         width: 100%;
+        height: 100%;
         text-align: center;
       }
     }
@@ -94,9 +101,11 @@ const MenuMobileStyles = styled.div`
   }
 `;
 
-function MenuMobile({ mobileMenu, isMobile }) {
+function MenuMobile({ mobileMenu, isMobile, setMobileMenu }) {
   const [showProduct, setShowProduct] = useState(false);
   const [showResources, setShowResources] = useState(false);
+
+  const { checkingName } = useGlobalContext();
 
   if ((mobileMenu === true) & (isMobile === true)) {
     document.querySelector("body").style.overflowY = "hidden";
@@ -192,12 +201,28 @@ function MenuMobile({ mobileMenu, isMobile }) {
               </ul>
             </div>
             <div className='menuMobile__wrappper--action'>
-              <Button outline text='Log in' className='mobileMenu__button' />
-              <Button
-                secondary
-                text='Get started free'
-                className='mobileMenu__button'
-              />
+              <Link
+                to='/login'
+                role='button'
+                onClick={() => {
+                  checkingName();
+                  setMobileMenu(false);
+                }}>
+                <Button outline text='Log in' className='mobileMenu__button' />
+              </Link>
+              <Link
+                to='/signup'
+                role='button'
+                onClick={() => {
+                  checkingName();
+                  setMobileMenu(false);
+                }}>
+                <Button
+                  secondary
+                  text='Get started free'
+                  className='mobileMenu__button'
+                />
+              </Link>
             </div>
           </div>
         </MenuMobileStyles>

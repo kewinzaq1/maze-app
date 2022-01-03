@@ -6,6 +6,8 @@ import styled from "styled-components";
 import Button from "./Button";
 import MenuMobile from "./MenuMobile";
 import MenuPopUp from "./MenuPopUp";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const NavbarStyles = styled.nav`
   position: fixed;
@@ -24,6 +26,10 @@ const NavbarStyles = styled.nav`
     padding: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+
+    &.login {
+      max-width: 100%;
+    }
 
     .nav__logo {
       padding-top: 0.3rem;
@@ -70,6 +76,8 @@ function NavBar() {
     window.matchMedia("(max-width: 1024px").matches
   );
 
+  const { isLogin, checkingName } = useGlobalContext();
+
   const [navbarActive, setNavbarActive] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [popMenu, setPopMenu] = useState(false);
@@ -98,19 +106,21 @@ function NavBar() {
       className={
         navbarActive || mobileMenu || popResources || popProduct ? "active" : ""
       }>
-      <div className='nav__wrapper'>
+      <div className={`nav__wrapper ${isLogin ? "login" : ""}`}>
         <div className='nav__logo'>
           <img src={LogoBig} alt='maze' />
         </div>
-        {isMobile && (
+        {isMobile && !isLogin ? (
           <div
             className='nav__button--hamburger'
             role='button'
             onClick={() => setMobileMenu(!mobileMenu)}>
             {!mobileMenu ? <GiHamburgerMenu /> : <AiOutlineClose />}
           </div>
+        ) : (
+          ""
         )}
-        {!isMobile && (
+        {!isMobile && !isLogin ? (
           <>
             <div className='nav__list'>
               <ul>
@@ -163,13 +173,23 @@ function NavBar() {
               </ul>
             </div>
             <div className='nav__action'>
-              <Button text='login' />
-              <Button secondary text='Get started free' />
+              <Link to='/login' role='button' onClick={checkingName}>
+                <Button text='login' />
+              </Link>
+              <Link to='/signup' role='button' onClick={checkingName}>
+                <Button secondary text='Get started free' />
+              </Link>
             </div>
           </>
+        ) : (
+          ""
         )}
       </div>
-      <MenuMobile mobileMenu={mobileMenu} isMobile={isMobile} />
+      <MenuMobile
+        mobileMenu={mobileMenu}
+        isMobile={isMobile}
+        setMobileMenu={setMobileMenu}
+      />
       <MenuPopUp
         popMenu={popMenu}
         setPopMenu={setPopMenu}

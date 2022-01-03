@@ -5,6 +5,8 @@ import Button from "./Button";
 import Paragraph from "./Paragraph";
 import Title from "./Title";
 import HeroAnimation from "../assets/animations/hero.mp4";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const HeroStyles = styled.section`
   background-color: var(--lightBlue_1);
@@ -97,6 +99,8 @@ const HeroStyles = styled.section`
 `;
 
 function HeroSection() {
+  const { checkingName } = useGlobalContext();
+
   return (
     <HeroStyles>
       <div className='hero__wrapper'>
@@ -108,8 +112,12 @@ function HeroSection() {
             days.
           </Paragraph>
           <div className='hero__buttons'>
-            <Button secondary text='Get started free' />
-            <Button outline text='Talk to sales' />
+            <Link to='/signup' role='button' onClick={checkingName}>
+              <Button secondary text='Get started free' />
+            </Link>
+            <Link to='/' role='button' onClick={checkingName}>
+              <Button outline text='Talk to sales' />
+            </Link>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import "@fontsource/poppins/800.css";
 const GlobalStyle = createGlobalStyle`
     :root{
         --blue_1: #4395FD;
+        --blue_2: #4394fd76;
         --lightBlue_1: #F1F5FA;
         --white_2: #fafafadf;
         --white_1: #ffffff;
@@ -29,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
         overflow-x:hidden;
     }
     *,*::after,*::before {margin: 0; padding: 0; box-sizing: border-box;}
-    a{text-decoration:none; cursor: pointer; }
+    a{text-decoration:none; cursor: pointer;  color: var(--black_1)}
     ul,li{list-style-type: none}
     img,svg{height:100%;width:100%;}
 `;

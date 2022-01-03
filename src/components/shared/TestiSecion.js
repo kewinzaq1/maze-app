@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import brazeLogo from "../../assets/braze/logo.png";
-import brazeWoman from "../../assets/braze/woman.png";
-import Button from "../shared/Button";
-import Paragraph from "../shared/Paragraph";
 
-const BrazeStyles = styled.section`
+import Button from "./Button";
+import Paragraph from "./Paragraph";
+
+const TestiStyles = styled.section`
   margin: 5rem 0;
   background: var(--yellow_1);
   position: relative;
@@ -34,8 +33,8 @@ const BrazeStyles = styled.section`
     }
 
     img {
-      width: 8rem;
-      height: 5rem;
+      width: 15rem;
+      height: 3rem;
     }
   }
 
@@ -56,7 +55,7 @@ const BrazeStyles = styled.section`
       left: 0;
       top: 0;
       height: 100%;
-      width: 40%;
+      width: 30%;
     }
 
     .braze__text {
@@ -71,28 +70,26 @@ const BrazeStyles = styled.section`
       }
     }
   }
+
+  &.testi--violet {
+    background: #e6dff3 !important;
+  }
 `;
 
-function BrazeSection() {
+function TestiSection({ image, logo, title, quots, paragraph, ...rest }) {
   return (
-    <BrazeStyles>
+    <TestiStyles {...rest}>
       <div className='braze__image'>
-        <img src={brazeWoman} alt='braze-woman' />
+        <img src={image} alt='braze-woman' />
       </div>
       <div className='braze__text'>
-        <img src={brazeLogo} alt='braze-logo' />
-        <Paragraph className='braze__qouts'>
-          "Using Maze has supercharged our product design process and made it
-          possible to drive faster turnaround times, speeding up product
-          iteration and making for a better, faster user experience."
-        </Paragraph>
-        <Paragraph className='braze__paragraph'>
-          Yuna Akazawa, Product Designer at Braze
-        </Paragraph>
+        <img src={logo} alt={title} />
+        <Paragraph className='braze__qouts'>{quots}</Paragraph>
+        <Paragraph className='braze__paragraph'>{paragraph}</Paragraph>
         <Button outline text='Learn more' />
       </div>
-    </BrazeStyles>
+    </TestiStyles>
   );
 }
 
-export default BrazeSection;
+export default TestiSection;

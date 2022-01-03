@@ -9,8 +9,8 @@ import InfoSection from "./InfoSection";
 const InfoContainerStyles = styled.section`
   .InfoSection--blue {
     background-color: #f5fcff;
-    padding-top: 30rem;
-    margin-top: -30rem;
+    padding-top: 12rem;
+    margin-top: -12rem;
     p {
       color: #3881a0;
     }
@@ -55,6 +55,8 @@ const InfoContainerStyles = styled.section`
   }
 
   @media (min-width: 768px) {
+    padding-top: 25rem;
+    margin-top: -25rem;
     .infoBox:nth-child(odd) {
       .info__wrapper {
         flex-direction: row-reverse !important;

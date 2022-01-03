@@ -134,7 +134,10 @@ function NavBar() {
                   onMouseEnter={() => {
                     setPopMenu(false);
                   }}
-                  onClick={() => setCurrentPage("why-maze")}>
+                  onClick={() => {
+                    checkingName();
+                    setCurrentPage("why-maze");
+                  }}>
                   <Link to='/why-maze'>Why Maze?</Link>
                 </li>
                 <li

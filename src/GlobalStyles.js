@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
     a{text-decoration:none; cursor: pointer;  color: var(--black_1)}
     ul,li{list-style-type: none}
     img,svg{height:100%;width:100%;}
+
 `;
 
 export default GlobalStyle;

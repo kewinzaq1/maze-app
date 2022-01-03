@@ -12,9 +12,9 @@ const AppProvider = ({ children }) => {
   const checkingName = () => {
     setTimeout(() => {
       const currentLocation = window.location.pathname.replace("/", "");
+      window.scrollTo(0, 0);
       if (currentLocation === "login" || currentLocation === "signup") {
         setIsLogin(true);
-        window.scrollTo(0, 0);
         document.querySelector("body").style.overflowY = "hidden";
       } else {
         setIsLogin(false);

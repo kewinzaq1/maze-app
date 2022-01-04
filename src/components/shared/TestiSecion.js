@@ -33,7 +33,7 @@ const TestiStyles = styled.section`
     }
 
     img {
-      width: 15rem;
+      width: 5rem;
       height: 3rem;
     }
   }

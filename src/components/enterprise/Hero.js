@@ -109,6 +109,7 @@ const HeroStyles = styled.section`
     align-items: center;
     justify-content: center;
     img {
+      opacity: 0.6;
       width: 100px;
       filter: invert(100%);
     }

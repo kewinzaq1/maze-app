@@ -7,6 +7,7 @@ import TestiSecion from "../components/shared/TestiSecion";
 import woman from "../assets/enterpirce/testi/woman.png";
 import brand from "../assets/enterpirce/testi/brand.png";
 import Contact from "../components/enterprise/Contact";
+import Security from "../components/enterprise/Security";
 
 function Enterprise() {
   return (
@@ -21,6 +22,7 @@ function Enterprise() {
         paragraph='Melany Valderamma, Senior Interaction Designer at GE'
       />
       <Contact />
+      <Security />
     </>
   );
 }

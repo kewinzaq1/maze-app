@@ -61,6 +61,11 @@ const ButtonStyles = styled.a`
        }
      }
   `}
+  ${(props) =>
+    props.white &&
+    `
+    color: var(--white_1) ;
+  `}
 `;
 
 function Button({ text, ...rest }) {

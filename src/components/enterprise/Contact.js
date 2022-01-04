@@ -4,6 +4,7 @@ import Button from "../../components/shared/Button";
 import styled from "styled-components";
 
 const ContactStyles = styled.section`
+  padding: 10rem 0;
   .contact__wrapper {
     margin: 0 auto;
     padding: 2rem;

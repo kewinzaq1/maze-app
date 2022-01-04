@@ -15,6 +15,11 @@ const TitleStyles = styled.h1`
     `
      font-size: 1.5rem ;
   `}
+  ${(props) =>
+    props.white &&
+    `
+     color: var(--white_1);
+  `}
 `;
 
 function Title({ children, ...rest }) {

@@ -96,8 +96,8 @@ function InfoSection({
           )}
         </div>
         <div className='info__wrapper--video'>
-          <video autoPlay muted loop>
-            <source src={video} autoPlay muted loop />
+          <video autoPlay muted loop controlsList='nodownolad'>
+            <source src={video} autoPlay muted loop controlsList='nodownolad' />
           </video>
         </div>
       </div>

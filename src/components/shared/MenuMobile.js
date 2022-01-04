@@ -120,7 +120,12 @@ function MenuMobile({ mobileMenu, isMobile, setMobileMenu }) {
           <div className='menuMobile__wrappper'>
             <div className='menuMobile__wrappper--list'>
               <ul>
-                <li>
+                <li
+                  role='button'
+                  onClick={() => {
+                    setMobileMenu(!mobileMenu);
+                    checkingName();
+                  }}>
                   <Link to='why-maze'>Why Maze?</Link>
                 </li>
                 <li role='button' onClick={() => setShowProduct(!showProduct)}>
@@ -165,10 +170,20 @@ function MenuMobile({ mobileMenu, isMobile, setMobileMenu }) {
                 ) : (
                   ""
                 )}
-                <li>
+                <li
+                  role='button'
+                  onClick={() => {
+                    setMobileMenu(!mobileMenu);
+                    checkingName();
+                  }}>
                   <Link to='/enterprise'>Enterprise</Link>
                 </li>
-                <li>
+                <li
+                  role='button'
+                  onClick={() => {
+                    setMobileMenu(!mobileMenu);
+                    checkingName();
+                  }}>
                   <Link to='/pricing'>Pricing</Link>
                 </li>
                 <li
@@ -203,7 +218,14 @@ function MenuMobile({ mobileMenu, isMobile, setMobileMenu }) {
                 ) : (
                   ""
                 )}
-                <li>Comunity</li>
+                <li
+                  role='button'
+                  onClick={() => {
+                    setMobileMenu(!mobileMenu);
+                    checkingName();
+                  }}>
+                  <Link to='/comunity'>Comunity</Link>
+                </li>
               </ul>
             </div>
             <div className='menuMobile__wrappper--action'>

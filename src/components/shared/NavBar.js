@@ -150,19 +150,27 @@ function NavBar() {
                   Product <AiOutlineDown />
                 </li>
                 <li
+                  className={currentPage === "enterprise" ? "active" : ""}
                   role='button'
                   onMouseEnter={() => {
                     setPopMenu(false);
                   }}
-                  onClick={() => setCurrentPage("enterprise")}>
+                  onClick={() => {
+                    checkingName();
+                    setCurrentPage("enterprise");
+                  }}>
                   <Link to='/enterprise'>Enterprise</Link>
                 </li>
                 <li
+                  className={currentPage === "pricing" ? "active" : ""}
                   role='button'
                   onMouseEnter={() => {
                     setPopMenu(false);
                   }}
-                  onClick={() => setCurrentPage("pricing")}>
+                  onClick={() => {
+                    checkingName();
+                    setCurrentPage("enterprise");
+                  }}>
                   <Link to='/pricing'>Pricing</Link>
                 </li>
                 <li
@@ -175,11 +183,15 @@ function NavBar() {
                   Resources <AiOutlineDown />
                 </li>
                 <li
+                  className={currentPage === "comunity" ? "active" : ""}
                   role='button'
                   onMouseEnter={() => {
                     setPopMenu(false);
                   }}
-                  onClick={() => setCurrentPage("comunity")}>
+                  onClick={() => {
+                    checkingName();
+                    setCurrentPage("comunity");
+                  }}>
                   <Link to='/comunity'>Comunity</Link>
                 </li>
               </ul>

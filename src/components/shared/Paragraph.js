@@ -7,6 +7,12 @@ const ParagraphStyles = styled.p`
   @media (min-width: 1024px) {
     font-size: 1.25rem;
   }
+
+  ${(props) =>
+    props.small &&
+    `
+     font-size: .9rem !important;
+  `}
 `;
 
 function Paragraph({ children, ...rest }) {

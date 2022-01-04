@@ -19,6 +19,11 @@ const AppProvider = ({ children }) => {
       } else {
         setIsLogin(false);
       }
+      if (currentLocation === "enterprise") {
+        document.querySelector(".nav__wrapper").classList.add("enterprise");
+      } else {
+        document.querySelector(".nav__wrapper").classList.remove("enterprise");
+      }
       console.log(currentLocation);
       setCurrentPage(currentLocation);
       console.log(currentPage);

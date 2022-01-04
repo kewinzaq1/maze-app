@@ -1,10 +1,11 @@
 import React from "react";
+import Hero from "../components/enterprise/Hero";
 
 function Enterprise() {
   return (
-    <div>
-      <h1>Enterpirse</h1>
-    </div>
+    <>
+      <Hero />
+    </>
   );
 }
 

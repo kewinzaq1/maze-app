@@ -20,6 +20,13 @@ const TitleStyles = styled.h1`
     `
      color: var(--white_1);
   `}
+  ${(props) =>
+    props.smLight &&
+    `
+    font-weight: 500;
+    font-size:1.6rem;
+    
+`}
 `;
 
 function Title({ children, ...rest }) {

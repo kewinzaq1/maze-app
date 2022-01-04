@@ -13,12 +13,8 @@ const TitleStyles = styled.h1`
   ${(props) =>
     props.small &&
     `
-     font-size: 1.5rem !important;
+     font-size: 1.5rem ;
   `}
-
-  @media (min-width: 1024px) {
-    font-size: 3.5rem;
-  }
 `;
 
 function Title({ children, ...rest }) {

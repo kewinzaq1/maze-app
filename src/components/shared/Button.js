@@ -35,6 +35,11 @@ const ButtonStyles = styled.a`
       }
   `}
   ${(props) =>
+    props.pad1 &&
+    `
+      padding: .75rem 1.5rem;
+  `}
+  ${(props) =>
     props.outline &&
     `
      border: 2px solid var(--black_1);

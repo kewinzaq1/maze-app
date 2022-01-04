@@ -10,6 +10,7 @@ import i4 from "../../assets/enterpirce/features/feature4.png";
 import InfoBox from "./InfoBox";
 
 const InfoStyles = styled.section`
+  padding: 5rem 0;
   .info__wrapper {
     padding: 2rem;
     max-width: 1200px;
@@ -29,6 +30,8 @@ const InfoStyles = styled.section`
       justify-content: center;
       gap: 2rem;
       text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
 
       .info__button {
         padding: 0.85rem;

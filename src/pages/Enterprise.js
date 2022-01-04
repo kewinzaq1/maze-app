@@ -9,6 +9,7 @@ import brand from "../assets/enterpirce/testi/brand.png";
 import Contact from "../components/enterprise/Contact";
 import Security from "../components/enterprise/Security";
 import GoodHands from "../components/enterprise/GoodHands";
+import ServicesSection from "../components/home/ServicesSection";
 
 function Enterprise() {
   return (
@@ -25,6 +26,7 @@ function Enterprise() {
       <Contact />
       <Security />
       <GoodHands />
+      <ServicesSection />
     </>
   );
 }

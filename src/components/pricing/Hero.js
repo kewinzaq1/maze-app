@@ -97,7 +97,7 @@ const HeroStyles = styled.section`
         }
       }
     }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       &--pricingBoxes {
         flex-direction: row;
       }

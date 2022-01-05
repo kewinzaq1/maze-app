@@ -14,19 +14,21 @@ import ServicesSection from "../components/home/ServicesSection";
 function Enterprise() {
   return (
     <>
-      <Hero />
-      <Info />
-      <Reports />
-      <TestiSecion
-        image={woman}
-        logo={brand}
-        quots='“Now everyone is taking the reins and are able to set up tests on their own - making the designs themselves to run different variations.”'
-        paragraph='Melany Valderamma, Senior Interaction Designer at GE'
-      />
-      <Contact />
-      <Security />
-      <GoodHands />
-      <ServicesSection />
+      <main>
+        <Hero />
+        <Info />
+        <Reports />
+        <TestiSecion
+          image={woman}
+          logo={brand}
+          quots='“Now everyone is taking the reins and are able to set up tests on their own - making the designs themselves to run different variations.”'
+          paragraph='Melany Valderamma, Senior Interaction Designer at GE'
+        />
+        <Contact />
+        <Security />
+        <GoodHands />
+        <ServicesSection />
+      </main>
     </>
   );
 }

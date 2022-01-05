@@ -29,9 +29,13 @@ const TestimonailsStyled = styled.section`
       }
     }
     &--slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
       background: #ffe6d0;
       width: 100%;
-      height: 25rem;
+      height: 30rem;
       padding: 2rem;
     }
   }

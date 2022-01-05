@@ -5,8 +5,10 @@ import Testimonails from "../components/pricing/Testimonails";
 function Pricing() {
   return (
     <>
-      <Hero />
-      <Testimonails />
+      <main>
+        <Hero />
+        <Testimonails />
+      </main>
     </>
   );
 }

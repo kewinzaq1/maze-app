@@ -10,16 +10,18 @@ import brazeWoman from "../assets/braze/woman.png";
 function Main() {
   return (
     <>
-      <HeroSection />
-      <Testimonials />
-      <AboutSection />
-      <TestiSecion
-        image={brazeWoman}
-        logo={brazeLogo}
-        quots='"Using Maze has supercharged our product design process and made it possible to drive faster turnaround times, speeding up product iteration and making for a better, faster user experience."'
-        paragraph='Yuna Akazawa, Product Designer at Braze'
-      />
-      <ServicesSection />
+      <main>
+        <HeroSection />
+        <Testimonials />
+        <AboutSection />
+        <TestiSecion
+          image={brazeWoman}
+          logo={brazeLogo}
+          quots='"Using Maze has supercharged our product design process and made it possible to drive faster turnaround times, speeding up product iteration and making for a better, faster user experience."'
+          paragraph='Yuna Akazawa, Product Designer at Braze'
+        />
+        <ServicesSection />
+      </main>
     </>
   );
 }

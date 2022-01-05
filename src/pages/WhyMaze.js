@@ -8,7 +8,7 @@ import TrySection from "../components/whyMaze/TrySection";
 
 function WhyMaze() {
   return (
-    <>
+    <main>
       <HeroSection />
       <InfoContainer />
       <TestiSection
@@ -19,7 +19,7 @@ function WhyMaze() {
         className='testi--violet'
       />
       <TrySection />
-    </>
+    </main>
   );
 }
 

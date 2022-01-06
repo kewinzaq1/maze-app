@@ -36,7 +36,28 @@ const GlobalStyle = createGlobalStyle`
     a{text-decoration:none; cursor: pointer;  color: var(--black_1)}
     ul,li{list-style-type: none}
     img,svg{height:100%;width:100%;}
+    .eventType {
+        border: 1px solid #f59d4d;
+        color: #f59d4d;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
 
+      .eventTypeSpotlight{
+          border-color: #33744c;
+          color: #33744c;
+      }
+
+      .eventTypeCurve{
+        border-color: #78388b;
+          color: #78388b;
+      }
+      .eventTypePath{
+        border-color: #e06ccd;
+          color: #e06ccd;
+      }
 `;
 
 export default GlobalStyle;

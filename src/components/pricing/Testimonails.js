@@ -41,10 +41,10 @@ const TestimonailsStyled = styled.section`
     }
 
     &--sliderDesktop {
-      border-radius: 2rem;
       height: 35rem;
       background: #ffe6d0;
       margin: 0 auto;
+      border-radius: 2rem;
     }
   }
 

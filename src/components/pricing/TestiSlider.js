@@ -117,10 +117,16 @@ const TestiSliderStyles = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
 
     &El {
       display: flex;
+      background: #ffe6d0;
       .testiSlider__text {
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+
         width: 50%;
         height: 100%;
         padding: 2rem;
@@ -131,7 +137,7 @@ const TestiSliderStyles = styled.div`
       .testiSlider__image {
         width: 50%;
         height: 100%;
-
+        object-fit: cover;
         img {
           width: 80%;
           object-fit: cover;
@@ -151,6 +157,11 @@ const TestiSliderStyles = styled.div`
     img {
       object-fit: contain;
       width: 100px;
+    }
+
+    img:last-child {
+      width: 55px;
+      height: 55px;
     }
 
     .swiper-pagination-bullet {
@@ -192,6 +203,10 @@ function TestiSlider() {
             prevEl: ".prevBtn",
           }}
           loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           className='testiSlider__mobile--swiper'>
           <SwiperSlide className='testiSlider__mobile--swiperEl'>
             {/* className={`testiSlider__mobile--text one ${
@@ -220,10 +235,10 @@ function TestiSlider() {
             <Paragraph className='testiSlider__quots'>
               “Now everyone is taking the reins and are able to set up tests on
               their own - making the designs themselves to run different
-              variations.” "
+              variations.”
             </Paragraph>
             <Paragraph className='testiSlider__author'>
-              Yuna Akazawa, Product Designer at Braze
+              Joahim Shonert, CEO Furutice
             </Paragraph>
           </SwiperSlide>
           <SwiperSlide className='testiSlider__mobile--swiperEl'>
@@ -240,7 +255,7 @@ function TestiSlider() {
               required on our new dashboards.”
             </Paragraph>
             <Paragraph className='testiSlider__author'>
-              Yuna Akazawa, Product Designer at Braze
+              Nicolas Beaudin, Product Design Menager | Samsung Ads
             </Paragraph>
           </SwiperSlide>
           <SwiperSlide className='testiSlider__mobile--swiperEl'>
@@ -256,7 +271,7 @@ function TestiSlider() {
               prototype validation."
             </Paragraph>
             <Paragraph className='testiSlider__author'>
-              Yuna Akazawa, Product Designer at Braze
+              Melany Valdemama, Senior Interaction Designer at GE
             </Paragraph>
           </SwiperSlide>
         </Swiper>
@@ -341,7 +356,7 @@ function TestiSlider() {
                 variations.” "
               </Paragraph>
               <Paragraph className='testiSlider__author'>
-                Yuna Akazawa, Product Designer at Braze
+                Joahim Shonert, CEO Furutice
               </Paragraph>
             </div>
           </SwiperSlide>
@@ -358,11 +373,12 @@ function TestiSlider() {
                 />
               </div>
               <Paragraph className='testiSlider__quots'>
-                "Hands down the best tool on the market for user research and
-                prototype validation."
+                “Now everyone is taking the reins and are able to set up tests
+                on their own - making the designs themselves to run different
+                variations.”
               </Paragraph>
               <Paragraph className='testiSlider__author'>
-                Yuna Akazawa, Product Designer at Braze
+                Nicolas Beaudin, Product Design Menager | Samsung Ads
               </Paragraph>
             </div>
           </SwiperSlide>
@@ -383,7 +399,7 @@ function TestiSlider() {
                 prototype validation."
               </Paragraph>
               <Paragraph className='testiSlider__author'>
-                Yuna Akazawa, Product Designer at Braze
+                Melany Valdemama, Senior Interaction Designer at GE
               </Paragraph>
             </div>
           </SwiperSlide>

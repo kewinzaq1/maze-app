@@ -135,7 +135,7 @@ function Hero() {
     "Custom payment terms",
   ];
 
-  const [isYearly, setIsYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(true);
 
   return (
     <HeroStyles>
@@ -199,7 +199,7 @@ function Hero() {
           <PlanBox
             name='Organization'
             description='Scale rapid testing company wide'
-            price='Lets chat'
+            price="Let's chat"
             billed='Custom pricing'
             seats='Starting from 10 seats'
             buttonText='Contact us'

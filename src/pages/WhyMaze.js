@@ -4,7 +4,7 @@ import InfoContainer from "../components/whyMaze/InfoContainer";
 import TestiSection from "../components/shared/TestiSecion";
 import TestiImage from "../assets/why-maze/testimonail/person.png";
 import TestiLogo from "../assets/why-maze/testimonail/logo.png";
-import TrySection from "../components/whyMaze/TrySection";
+import TrySection from "../components/shared/TrySection";
 
 function WhyMaze() {
   return (

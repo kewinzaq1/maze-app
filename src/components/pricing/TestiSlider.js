@@ -164,228 +164,148 @@ const TestiSliderStyles = styled.div`
       }
     }
   }
+
+  @media (max-width: 1024px) {
+    .testiSlider__desktop {
+      display: none;
+    }
+  }
+  @media (min-width: 1024px) {
+    .testiSlider__mobile {
+      display: none;
+    }
+    .testiSlider__desktop {
+      display: flex;
+    }
+  }
 `;
 function TestiSlider() {
   const { isMobile } = useGlobalContext();
 
   return (
     <TestiSliderStyles>
-      {isMobile ? (
-        <>
-          <div className='testiSlider__mobile'>
-            <Swiper
-              spaceBetween={30}
-              centeredSlides={true}
-              navigation={{
-                nextEl: ".nextBtn",
-                prevEl: ".prevBtn",
-              }}
-              loop={true}
-              className='testiSlider__mobile--swiper'>
-              <SwiperSlide className='testiSlider__mobile--swiperEl'>
-                {/* className={`testiSlider__mobile--text one ${
+      <div className='testiSlider__mobile'>
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          navigation={{
+            nextEl: ".nextBtn",
+            prevEl: ".prevBtn",
+          }}
+          loop={true}
+          className='testiSlider__mobile--swiper'>
+          <SwiperSlide className='testiSlider__mobile--swiperEl'>
+            {/* className={`testiSlider__mobile--text one ${
               currentSlide === 0 ? "show" : "hide"
             }`}> */}
-                <div className='testi__brandBox'>
-                  <img
-                    src={brazelogo}
-                    alt='braze'
-                    className='brand__logo--braze'
-                  />
-                </div>
-                <Paragraph className='testiSlider__quots'>
-                  "Using Maze has supercharged our product design process and
-                  made it possible to drive faster turnaround times, speeding up
-                  product iteration and making for a better, faster user
-                  experience."
-                </Paragraph>
-                <Paragraph className='testiSlider__author'>
-                  Yuna Akazawa, Product Designer at Braze
-                </Paragraph>
-              </SwiperSlide>
-              <SwiperSlide className='testiSlider__mobile--swiperEl'>
-                <div className='testi__brandBox'>
-                  <img
-                    src={futuricelogo}
-                    alt='braze'
-                    className='brand__logo--futurice'
-                  />
-                </div>
-                <Paragraph className='testiSlider__quots'>
-                  “Now everyone is taking the reins and are able to set up tests
-                  on their own - making the designs themselves to run different
-                  variations.” "
-                </Paragraph>
-                <Paragraph className='testiSlider__author'>
-                  Yuna Akazawa, Product Designer at Braze
-                </Paragraph>
-              </SwiperSlide>
-              <SwiperSlide className='testiSlider__mobile--swiperEl'>
-                <div className='testi__brandBox'>
-                  <img
-                    src={samsunglogo}
-                    alt='braze'
-                    className='brand__logo--samsung'
-                  />
-                </div>
-                <Paragraph className='testiSlider__quots'>
-                  “Through Maze Discovery, we were able to reach about 70% of
-                  our internal users to validate which KPIs and metrics would be
-                  required on our new dashboards.”
-                </Paragraph>
-                <Paragraph className='testiSlider__author'>
-                  Yuna Akazawa, Product Designer at Braze
-                </Paragraph>
-              </SwiperSlide>
-              <SwiperSlide className='testiSlider__mobile--swiperEl'>
-                <div className='testi__brandBox'>
-                  <img
-                    src={generalelectriclogo}
-                    alt='braze'
-                    className='brand__logo--other'
-                  />
-                </div>
-                <Paragraph className='testiSlider__quots'>
-                  "Hands down the best tool on the market for user research and
-                  prototype validation."
-                </Paragraph>
-                <Paragraph className='testiSlider__author'>
-                  Yuna Akazawa, Product Designer at Braze
-                </Paragraph>
-              </SwiperSlide>
-            </Swiper>
-            <div className='testiSlider__mobile--controls'>
-              <div className='prevBtn'>
-                <BsArrowLeft className='prevBtn--icon' />
-              </div>
-              <div className='nextBtn'>
-                <BsArrowRight className='prevBtn--icon' />
-              </div>
+            <div className='testi__brandBox'>
+              <img src={brazelogo} alt='braze' className='brand__logo--braze' />
             </div>
+            <Paragraph className='testiSlider__quots'>
+              "Using Maze has supercharged our product design process and made
+              it possible to drive faster turnaround times, speeding up product
+              iteration and making for a better, faster user experience."
+            </Paragraph>
+            <Paragraph className='testiSlider__author'>
+              Yuna Akazawa, Product Designer at Braze
+            </Paragraph>
+          </SwiperSlide>
+          <SwiperSlide className='testiSlider__mobile--swiperEl'>
+            <div className='testi__brandBox'>
+              <img
+                src={futuricelogo}
+                alt='braze'
+                className='brand__logo--futurice'
+              />
+            </div>
+            <Paragraph className='testiSlider__quots'>
+              “Now everyone is taking the reins and are able to set up tests on
+              their own - making the designs themselves to run different
+              variations.” "
+            </Paragraph>
+            <Paragraph className='testiSlider__author'>
+              Yuna Akazawa, Product Designer at Braze
+            </Paragraph>
+          </SwiperSlide>
+          <SwiperSlide className='testiSlider__mobile--swiperEl'>
+            <div className='testi__brandBox'>
+              <img
+                src={samsunglogo}
+                alt='braze'
+                className='brand__logo--samsung'
+              />
+            </div>
+            <Paragraph className='testiSlider__quots'>
+              “Through Maze Discovery, we were able to reach about 70% of our
+              internal users to validate which KPIs and metrics would be
+              required on our new dashboards.”
+            </Paragraph>
+            <Paragraph className='testiSlider__author'>
+              Yuna Akazawa, Product Designer at Braze
+            </Paragraph>
+          </SwiperSlide>
+          <SwiperSlide className='testiSlider__mobile--swiperEl'>
+            <div className='testi__brandBox'>
+              <img
+                src={generalelectriclogo}
+                alt='braze'
+                className='brand__logo--other'
+              />
+            </div>
+            <Paragraph className='testiSlider__quots'>
+              "Hands down the best tool on the market for user research and
+              prototype validation."
+            </Paragraph>
+            <Paragraph className='testiSlider__author'>
+              Yuna Akazawa, Product Designer at Braze
+            </Paragraph>
+          </SwiperSlide>
+        </Swiper>
+        <div className='testiSlider__mobile--controls'>
+          <div className='prevBtn'>
+            <BsArrowLeft className='prevBtn--icon' />
           </div>
-        </>
-      ) : (
-        <>
-          <div className='testiSlider__desktop'>
-            <Swiper
-              spaceBetween={100}
-              centeredSlides={true}
-              autoplay={{
-                delay: 3500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                el: ".testiSlider__desktop--pagination",
-                clickable: true,
-                renderBullet: function (index, className) {
-                  console.log(index, className);
-                  if (index === 0) {
-                    return `<img src=${brazelogo} class=${className}>`;
-                  }
-                  if (index === 1) {
-                    return `<img src=${futuricelogo} class=${className}>`;
-                  }
-                  if (index === 2) {
-                    return `<img src=${samsunglogo} class=${className}>`;
-                  }
-                  if (index === 3) {
-                    return `<img src=${generalelectriclogo} class=${className}>`;
-                  }
-                  // return `<img src=${imagesBrands} alt="" class=${className} />`;
-                  // return '<span class=\"' + className + '\">' + (index + 1) + '</span>';
-                },
-              }}
-              loop={true}
-              className='testiSlider__desktop--swiper'>
-              <SwiperSlide className='testiSlider__desktop--swiperEl'>
-                <div className='testiSlider__image'>
-                  <img src={brazePerson} alt='braze-person' />
-                </div>
-                <div className='testiSlider__text'>
-                  <div className='testi__brandBox'>
-                    <img
-                      src={brazelogo}
-                      alt='braze'
-                      className='brand__logo--braze'
-                    />
-                  </div>
-                  <Paragraph className='testiSlider__quots'>
-                    "Using Maze has supercharged our product design process and
-                    made it possible to drive faster turnaround times, speeding
-                    up product iteration and making for a better, faster user
-                    experience."
-                  </Paragraph>
-                  <Paragraph className='testiSlider__author'>
-                    Yuna Akazawa, Product Designer at Braze
-                  </Paragraph>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='testiSlider__desktop--swiperEl'>
-                <div className='testiSlider__image'>
-                  <img src={futuricePerson} alt='futurice-person' />
-                </div>
-                <div className='testiSlider__text'>
-                  <div className='testi__brandBox'>
-                    <img
-                      src={futuricelogo}
-                      alt='braze'
-                      className='brand__logo--futurice'
-                    />
-                  </div>
-                  <Paragraph className='testiSlider__quots'>
-                    “Now everyone is taking the reins and are able to set up
-                    tests on their own - making the designs themselves to run
-                    different variations.” "
-                  </Paragraph>
-                  <Paragraph className='testiSlider__author'>
-                    Yuna Akazawa, Product Designer at Braze
-                  </Paragraph>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='testiSlider__desktop--swiperEl'>
-                <div className='testiSlider__image'>
-                  <img src={samsungPerson} alt='generalelectric-person' />
-                </div>
-                <div className='testiSlider__text'>
-                  <div className='testi__brandBox'>
-                    <img
-                      src={samsunglogo}
-                      alt='samsung'
-                      className='brand__logo--samsung'
-                    />
-                  </div>
-                  <Paragraph className='testiSlider__quots'>
-                    "Hands down the best tool on the market for user research
-                    and prototype validation."
-                  </Paragraph>
-                  <Paragraph className='testiSlider__author'>
-                    Yuna Akazawa, Product Designer at Braze
-                  </Paragraph>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='testiSlider__desktop--swiperEl'>
-                <div className='testiSlider__image'>
-                  <img src={otherPerson} alt='generalelectric-person' />
-                </div>
-                <div className='testiSlider__text'>
-                  <div className='testi__brandBox'>
-                    <img
-                      src={generalelectriclogo}
-                      alt='braze'
-                      className='brand__logo--other'
-                    />
-                  </div>
-                  <Paragraph className='testiSlider__quots'>
-                    "Hands down the best tool on the market for user research
-                    and prototype validation."
-                  </Paragraph>
-                  <Paragraph className='testiSlider__author'>
-                    Yuna Akazawa, Product Designer at Braze
-                  </Paragraph>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-            <div className='testiSlider__desktop--pagination'>
+          <div className='nextBtn'>
+            <BsArrowRight className='prevBtn--icon' />
+          </div>
+        </div>
+      </div>
+      <div className='testiSlider__desktop'>
+        <Swiper
+          spaceBetween={100}
+          centeredSlides={true}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            el: ".testiSlider__desktop--pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+              console.log(index, className);
+              if (index === 0) {
+                return `<img src=${brazelogo} class=${className}>`;
+              }
+              if (index === 1) {
+                return `<img src=${futuricelogo} class=${className}>`;
+              }
+              if (index === 2) {
+                return `<img src=${samsunglogo} class=${className}>`;
+              }
+              if (index === 3) {
+                return `<img src=${generalelectriclogo} class=${className}>`;
+              }
+              // return `<img src=${imagesBrands} alt="" class=${className} />`;
+              // return '<span class=\"' + className + '\">' + (index + 1) + '</span>';
+            },
+          }}
+          loop={true}
+          className='testiSlider__desktop--swiper'>
+          <SwiperSlide className='testiSlider__desktop--swiperEl'>
+            <div className='testiSlider__image'>
+              <img src={brazePerson} alt='braze-person' />
+            </div>
+            <div className='testiSlider__text'>
               <div className='testi__brandBox'>
                 <img
                   src={brazelogo}
@@ -393,6 +313,22 @@ function TestiSlider() {
                   className='brand__logo--braze'
                 />
               </div>
+              <Paragraph className='testiSlider__quots'>
+                "Using Maze has supercharged our product design process and made
+                it possible to drive faster turnaround times, speeding up
+                product iteration and making for a better, faster user
+                experience."
+              </Paragraph>
+              <Paragraph className='testiSlider__author'>
+                Yuna Akazawa, Product Designer at Braze
+              </Paragraph>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='testiSlider__desktop--swiperEl'>
+            <div className='testiSlider__image'>
+              <img src={futuricePerson} alt='futurice-person' />
+            </div>
+            <div className='testiSlider__text'>
               <div className='testi__brandBox'>
                 <img
                   src={futuricelogo}
@@ -400,13 +336,42 @@ function TestiSlider() {
                   className='brand__logo--futurice'
                 />
               </div>
+              <Paragraph className='testiSlider__quots'>
+                “Now everyone is taking the reins and are able to set up tests
+                on their own - making the designs themselves to run different
+                variations.” "
+              </Paragraph>
+              <Paragraph className='testiSlider__author'>
+                Yuna Akazawa, Product Designer at Braze
+              </Paragraph>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='testiSlider__desktop--swiperEl'>
+            <div className='testiSlider__image'>
+              <img src={samsungPerson} alt='generalelectric-person' />
+            </div>
+            <div className='testiSlider__text'>
               <div className='testi__brandBox'>
                 <img
                   src={samsunglogo}
-                  alt='braze'
+                  alt='samsung'
                   className='brand__logo--samsung'
                 />
               </div>
+              <Paragraph className='testiSlider__quots'>
+                "Hands down the best tool on the market for user research and
+                prototype validation."
+              </Paragraph>
+              <Paragraph className='testiSlider__author'>
+                Yuna Akazawa, Product Designer at Braze
+              </Paragraph>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='testiSlider__desktop--swiperEl'>
+            <div className='testiSlider__image'>
+              <img src={otherPerson} alt='generalelectric-person' />
+            </div>
+            <div className='testiSlider__text'>
               <div className='testi__brandBox'>
                 <img
                   src={generalelectriclogo}
@@ -414,10 +379,43 @@ function TestiSlider() {
                   className='brand__logo--other'
                 />
               </div>
+              <Paragraph className='testiSlider__quots'>
+                "Hands down the best tool on the market for user research and
+                prototype validation."
+              </Paragraph>
+              <Paragraph className='testiSlider__author'>
+                Yuna Akazawa, Product Designer at Braze
+              </Paragraph>
             </div>
+          </SwiperSlide>
+        </Swiper>
+        <div className='testiSlider__desktop--pagination'>
+          <div className='testi__brandBox'>
+            <img src={brazelogo} alt='braze' className='brand__logo--braze' />
           </div>
-        </>
-      )}
+          <div className='testi__brandBox'>
+            <img
+              src={futuricelogo}
+              alt='braze'
+              className='brand__logo--futurice'
+            />
+          </div>
+          <div className='testi__brandBox'>
+            <img
+              src={samsunglogo}
+              alt='braze'
+              className='brand__logo--samsung'
+            />
+          </div>
+          <div className='testi__brandBox'>
+            <img
+              src={generalelectriclogo}
+              alt='braze'
+              className='brand__logo--other'
+            />
+          </div>
+        </div>
+      </div>
     </TestiSliderStyles>
   );
 }

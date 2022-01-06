@@ -8,6 +8,9 @@ const AppProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(
     window.location.pathname.replace("/", "")
   );
+  const [isMobile, setIsMobile] = useState(
+    window.matchMedia("(max-width: 1024px").matches
+  );
 
   const checkingName = () => {
     setTimeout(() => {
@@ -48,6 +51,8 @@ const AppProvider = ({ children }) => {
         checkingName,
         currentPage,
         setCurrentPage,
+        isMobile,
+        setIsMobile,
       }}>
       {children}
     </AppContext.Provider>

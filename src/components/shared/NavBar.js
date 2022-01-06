@@ -98,12 +98,14 @@ const NavbarStyles = styled.nav`
 `;
 
 function NavBar() {
-  const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 1024px").matches
-  );
-
-  const { isLogin, checkingName, currentPage, setCurrentPage } =
-    useGlobalContext();
+  const {
+    isMobile,
+    setIsMobile,
+    isLogin,
+    checkingName,
+    currentPage,
+    setCurrentPage,
+  } = useGlobalContext();
 
   const [navbarActive, setNavbarActive] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);

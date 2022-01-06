@@ -4,10 +4,12 @@ import Paragraph from "../shared/Paragraph";
 import Title from "../shared/Title";
 import { AiOutlineRight } from "react-icons/ai";
 import TestiSlider from "./TestiSlider";
+import { useGlobalContext } from "../../context";
 
 const TestimonailsStyled = styled.section`
   .testimoanils__wrapper {
     margin: 0 auto;
+    max-width: 1200px;
 
     &--heading {
       display: flex;
@@ -28,20 +30,34 @@ const TestimonailsStyled = styled.section`
         }
       }
     }
-    &--slider {
+    &--sliderMobile {
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto;
       background: #ffe6d0;
       width: 100%;
-      height: 30rem;
+      height: 20rem;
       padding: 2rem;
+    }
+
+    &--sliderDesktop {
+      border-radius: 2rem;
+      height: 35rem;
+      background: #ffe6d0;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimoanils__wrapper {
+      width: 90%;
     }
   }
 `;
 
 function Testimonails() {
+  const { isMobile } = useGlobalContext();
   return (
     <TestimonailsStyled>
       <div className='testimoanils__wrapper'>
@@ -51,9 +67,15 @@ function Testimonails() {
             Read our customer stories <AiOutlineRight />
           </Paragraph>
         </div>
-        <div className='testimoanils__wrapper--slider'>
-          <TestiSlider />
-        </div>
+        {isMobile ? (
+          <div className='testimoanils__wrapper--sliderMobile'>
+            <TestiSlider />
+          </div>
+        ) : (
+          <div className='testimoanils__wrapper--sliderDesktop'>
+            <TestiSlider />
+          </div>
+        )}
       </div>
     </TestimonailsStyled>
   );

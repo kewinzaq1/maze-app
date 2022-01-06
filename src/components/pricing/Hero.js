@@ -69,9 +69,9 @@ const HeroStyles = styled.section`
           .planBox__button {
             background-color: #f9b972;
             color: var(--white_1);
+            border-color: transparent;
 
             &:hover {
-              border-color: transparent;
               opacity: 0.8;
             }
           }

@@ -1,10 +1,13 @@
 import React from "react";
+import Hero from "../components/comunity/Hero";
+import Involved from "../components/comunity/Involved";
 
 function Comunity() {
   return (
-    <div>
-      <h1>Comunity</h1>
-    </div>
+    <main>
+      <Hero />
+      <Involved />
+    </main>
   );
 }
 

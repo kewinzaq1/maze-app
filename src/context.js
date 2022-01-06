@@ -10,6 +10,11 @@ const AppProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 1024px").matches
   );
+  const [involved, setInvolved] = useState("events");
+
+  useEffect(() => {
+    console.log(involved);
+  }, [involved]);
 
   const checkingName = () => {
     setTimeout(() => {
@@ -49,6 +54,8 @@ const AppProvider = ({ children }) => {
         setCurrentPage,
         isMobile,
         setIsMobile,
+        involved,
+        setInvolved,
       }}>
       {children}
     </AppContext.Provider>

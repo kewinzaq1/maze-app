@@ -38,7 +38,6 @@ const TestimonailsStyled = styled.section`
       background: #ffe6d0;
       width: 100%;
       height: 20rem;
-      padding: 2rem;
     }
 
     &--sliderDesktop {

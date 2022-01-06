@@ -12,9 +12,7 @@ import Paragraph from "../shared/Paragraph";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import "swiper/css";
-
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
-import { useGlobalContext } from "../../context";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -65,8 +63,8 @@ const TestiSliderStyles = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      width: 70%;
-
+      width: 100%;
+      padding: 2rem;
       &El {
         display: flex;
         align-items: flex-start;
@@ -77,13 +75,16 @@ const TestiSliderStyles = styled.div`
     }
 
     &--controls {
+      position: absolute;
+      right: 2rem;
       display: flex;
       padding-top: 5rem;
       align-items: flex-start;
       justify-content: flex-end;
       height: 25rem;
-      width: 30%;
+      width: 50%;
       gap: 1rem;
+      z-index: 9999;
 
       .prevBtn,
       .nextBtn {
@@ -180,13 +181,11 @@ const TestiSliderStyles = styled.div`
   }
 `;
 function TestiSlider() {
-  const { isMobile } = useGlobalContext();
-
   return (
     <TestiSliderStyles>
       <div className='testiSlider__mobile'>
         <Swiper
-          spaceBetween={30}
+          spaceBetween={100}
           centeredSlides={true}
           navigation={{
             nextEl: ".nextBtn",

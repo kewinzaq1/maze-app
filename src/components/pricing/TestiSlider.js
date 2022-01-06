@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import brazelogo from "../../assets/pricing/testiSlider/brazelogo.png";
 import futuricelogo from "../../assets/pricing/testiSlider/futuricelogo.png";

@@ -127,7 +127,7 @@ function NavBar() {
     window.addEventListener("resize", () => {
       setIsMobile(window.matchMedia("(max-width: 1024px").matches);
     });
-  }, []);
+  });
 
   return (
     <NavbarStyles

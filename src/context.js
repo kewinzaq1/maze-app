@@ -27,9 +27,7 @@ const AppProvider = ({ children }) => {
       } else {
         document.querySelector(".nav__wrapper").classList.remove("enterprise");
       }
-      console.log(currentLocation);
       setCurrentPage(currentLocation);
-      console.log(currentPage);
     }, 100);
   };
 
@@ -40,7 +38,6 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     checkingName();
     setCurrentPage(window.location.pathname.replace("/", ""));
-    console.log(currentPage);
   }, []);
 
   return (

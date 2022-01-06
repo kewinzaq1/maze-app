@@ -296,7 +296,6 @@ function TestiSlider() {
             el: ".testiSlider__desktop--pagination",
             clickable: true,
             renderBullet: function (index, className) {
-              console.log(index, className);
               if (index === 0) {
                 return `<img src=${brazelogo} class=${className}>`;
               }

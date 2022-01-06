@@ -24,7 +24,9 @@ const TestimonailsStyled = styled.section`
         justify-content: center;
         gap: 1rem;
         font-weight: 500;
+        cursor: pointer;
         svg {
+          transition: 225ms;
           width: 1rem;
           color: var(--blue_1);
         }
@@ -51,6 +53,18 @@ const TestimonailsStyled = styled.section`
   @media (min-width: 1024px) {
     .testimoanils__wrapper {
       width: 90%;
+
+      &--heading {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        p:hover {
+          svg {
+            transform: translateX(5px);
+          }
+        }
+      }
     }
   }
 `;

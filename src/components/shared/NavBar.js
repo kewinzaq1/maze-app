@@ -114,7 +114,6 @@ function NavBar() {
   const [popProduct, setPopProduct] = useState(false);
 
   const changeNavbar = () => {
-    console.log(window.scrollY);
     if (window.scrollY > 90) {
       setNavbarActive(true);
     } else {

@@ -35,11 +35,16 @@ const EventsStyles = styled.section`
     .events__wrapper {
       &--panel {
         flex-direction: column-reverse;
+        width: 30%;
+      }
+
+      &--list {
+        width: 70%;
       }
 
       &Elements {
         flex-direction: row;
-        gap: 5rem;
+        gap: 3rem;
       }
     }
   }

@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./Button";
 import Paragraph from "./Paragraph";
 import Title from "./Title";
-import { AiOutlineGoogle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import LoginBg from "../../assets/login/background.jpg";

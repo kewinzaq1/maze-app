@@ -1,9 +1,9 @@
 import React from "react";
+import data from "../../assets/pricing/FAQ/data";
 import FaqEl from "./FaqEl";
 import styled from "styled-components";
 import Icon from "../../assets/pricing/FAQ/icon.png";
 import Title from "../../components/shared/Title";
-import data from "../../assets/pricing/FAQ/data";
 
 const FAQStyles = styled.section`
   padding: 10rem 0;
